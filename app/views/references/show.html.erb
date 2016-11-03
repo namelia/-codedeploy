@@ -1,0 +1,15 @@
+<div class =container>
+<h3>Reference</h3>
+
+<p>ID: <%= @reference.id if @reference.id %></p>
+<p>Number: <%= @reference.number if @reference.number %></p>
+<p>Kind: <%= @reference.kind if @reference.kind %></p>
+<p>Title: <%= @reference.title if @reference.title %></p>
+<p>Author: <%= @reference.author if @reference.author %></p>
+<p>Date: <%= @reference.pubdate if @reference.pubdate %></p>
+<p>UserID: <%= @reference.userid if @reference.userid %></p>
+<p>Notes: <%= @reference.notes if @reference.notes %></p>
+<%= button_to 'Edit', edit_reference_path(@reference),:class =>"btn btn-outline-primary",:method => :get,:style =>"float:left" %>
+
+<%= button_to 'Back', references_path,:class =>"btn btn-outline-primary",:method => :get %>
+</div>

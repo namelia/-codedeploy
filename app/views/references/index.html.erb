@@ -1,0 +1,45 @@
+<style>
+.tableheaders th
+{
+  font-size: 18px;
+}
+</style>
+
+<div class="container">
+  <div class="row">
+    <h1 align="center">References</h1>
+    <div class="table-responsive">
+      <table class="table table-hover" id ="RefTable">
+        <tbody>
+          <tr class="tableheaders">
+            <th> User Id </th>
+            <th> Number</th>
+            <th> Kind </th>
+            <th> Title </th>
+            <th> Author </th>
+            <th> PubDate </th>
+            <th> Notes </th>
+            <th colspan= "3"> Manage </th>
+          </tr>
+
+          <% @references.each do |reference| %>
+          <tr>
+          <td><%= reference.userid %></td>
+          <td><%= reference.number %></td>
+          <td><%= reference.kind %></td>
+          <td><%= reference.title %></td>
+          <td><%= reference.author %></td>
+          <td><%= reference.pubdate %></td>
+          <td><%= reference.notes %></td>
+          <td ><%= button_to 'Show', reference_path(reference) ,:class =>"btn btn-outline-primary",:method => :get %></td>
+          <td><%= button_to 'Edit', edit_reference_path(reference),:class =>"btn btn-outline-warning",:method => :get %></td>
+          <td><%= button_to 'Delete', reference_path(reference),:class =>"btn btn-outline-danger", method: :delete, data:{confirm: 'Are you sure?'}%></td>
+
+        </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
